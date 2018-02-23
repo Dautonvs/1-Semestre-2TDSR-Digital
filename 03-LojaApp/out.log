@@ -1,0 +1,10 @@
+2018-02-22 22:44:04 INFO  TerminalConsulta:22 - Inicializando o sistema
+2018-02-22 22:44:06 DEBUG EstoqueBO:15 - Consultando um produto
+2018-02-22 22:44:08 DEBUG EstoqueBO:15 - Consultando um produto
+2018-02-22 22:44:25 INFO  TerminalConsulta:22 - Inicializando o sistema
+2018-02-22 22:44:31 DEBUG EstoqueBO:15 - Consultando um produto
+2018-02-22 22:44:35 DEBUG EstoqueBO:15 - Consultando um produto
+2018-02-22 22:44:35 WARN  TerminalConsulta:45 - Produto não cadastrado
+2018-02-22 22:44:36 INFO  TerminalConsulta:51 - Finalizando a aplicação
+2018-02-22 22:45:03 INFO  TerminalConsulta:22 - Inicializando o sistema
+2018-02-22 22:45:06 INFO  TerminalConsulta:51 - Finalizando a aplicação

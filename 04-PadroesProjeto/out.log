@@ -1,0 +1,10 @@
+2018-02-22 22:26:43 INFO  PropertySingleton:28 - Carregando as propriedades do sistema
+2018-02-22 22:27:17 TRACE Teste:14 - Iniciando o sistema
+2018-02-22 22:27:17 DEBUG PropertySingleton:22 - Recuperando o objeto de propriedades
+2018-02-22 22:27:17 INFO  PropertySingleton:28 - Carregando as propriedades do sistema
+2018-02-22 22:27:23 TRACE Teste:14 - Iniciando o sistema
+2018-02-22 22:27:23 DEBUG PropertySingleton:22 - Recuperando o objeto de propriedades
+2018-02-22 22:27:23 INFO  PropertySingleton:28 - Carregando as propriedades do sistema
+2018-02-22 22:27:31 TRACE Teste:14 - Iniciando o sistema
+2018-02-22 22:27:31 DEBUG PropertySingleton:22 - Recuperando o objeto de propriedades
+2018-02-22 22:27:31 INFO  PropertySingleton:28 - Carregando as propriedades do sistema
