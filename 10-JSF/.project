@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>07-WS-Restful-Server</name>
+	<name>10-JSF</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -17,16 +17,6 @@
 		</buildCommand>
 		<buildCommand>
 			<name>org.jboss.tools.jst.web.kb.kbbuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.jboss.tools.cdi.core.cdibuilder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
-			<name>org.jboss.tools.ws.jaxrs.metamodelBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
@@ -52,10 +42,9 @@
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
-		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
-		<nature>org.jboss.tools.cdi.core.cdinature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>org.jboss.tools.jst.web.kb.kbnature</nature>
+		<nature>org.jboss.tools.jsf.jsfnature</nature>
 		<nature>org.hibernate.eclipse.console.hibernateNature</nature>
-		<nature>org.jboss.tools.ws.jaxrs.nature</nature>
 	</natures>
 </projectDescription>
