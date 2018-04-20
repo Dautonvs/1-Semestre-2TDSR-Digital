@@ -2,7 +2,7 @@ package br.com.fiap.jsf.bean;
 
 import javax.faces.bean.ManagedBean;
 
-@ManagedBean
+@ManagedBean //CUIDADO COM O IMPORT!!
 public class LoginBean {
 
 	private String usuario;

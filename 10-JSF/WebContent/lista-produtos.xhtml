@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Lista de Produtos</title>
+	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+	<h:outputScript library="js" name="jquery-3.3.1.min.js"/>
+	<h:outputScript library="js" name="bootstrap.min.js"/>
+</h:head>
+<h:body>
+	<div class="container">
+		<h1>Lista de Produtos</h1>
+		<h:messages />
+		<h:dataTable styleClass="table" value="#{produtoBean.produtos}" var="p">
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				#{p.codigo}		
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{p.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Disponível</f:facet>
+				<h:selectBooleanCheckbox disabled="true"
+								 value="#{p.disponivel}" />
+				#{p.disponivel?"Disponível":"Indisponível"}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Preço</f:facet>
+				#{p.preco}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+				<h:form>
+					<h:commandButton styleClass="mr-2 btn btn-outline-primary btn-sm" 
+						action="produto" value="Alterar" >
+						<f:setPropertyActionListener value="#{p}" 
+								target="#{produtoBean.produto}" />
+					</h:commandButton>
+					<h:commandButton styleClass="btn btn-outline-danger btn-sm" 
+						action="#{produtoBean.excluir(p.codigo)}"
+						 value="Excluir" />
+				</h:form>
+			</h:column>
+		</h:dataTable>
+	</div>
+</h:body>   
+</html>
