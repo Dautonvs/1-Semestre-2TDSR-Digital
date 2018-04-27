@@ -1,24 +1,16 @@
-package br.com.fiap.ws.entity;
+package br.com.fiap.ws.to;
 
 import java.util.Calendar;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+public class Bebida {
 
-@Entity
-@SequenceGenerator(name="produto",sequenceName="SQ_PRODUTO",allocationSize=1)
-public class Produto {
-
-	@Id
-	@GeneratedValue(generator="produto",strategy=GenerationType.SEQUENCE)
 	private int codigo;
 	
 	private String nome;
 	
 	private Calendar dataValidade;
+	
+	private boolean alcoolico;
 	
 	private double preco;
 
@@ -52,6 +44,14 @@ public class Produto {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+
+	public boolean isAlcoolico() {
+		return alcoolico;
+	}
+
+	public void setAlcoolico(boolean alcoolico) {
+		this.alcoolico = alcoolico;
 	}
 	
 }
