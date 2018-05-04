@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/_template.xhtml">
+	<ui:define name="titulo">Lista de Bebidas</ui:define>
+	<ui:define name="conteudo">
+		<h:messages />
+	<h:dataTable styleClass="table" value="#{bebidaBean.bebidas}" var="b">
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+			#{b.nome}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Preço</f:facet>
+			#{b.preco}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Alcoólico</f:facet>
+			<h:selectBooleanCheckbox value="#{b.alcoolico}"
+				disabled="true" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Data Validade</f:facet>
+			<h:outputText value="#{b.dataValidade.time}">
+				<f:convertDateTime pattern="dd/MM/yyyy"/>
+			</h:outputText>
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ações</f:facet>
+			<h:form>
+				<h:commandButton 
+					styleClass="mr-2 btn btn-outline-primary btn-sm"
+					action="bebida" value="Editar" >
+					<f:setPropertyActionListener 
+						value="#{b}" target="#{bebidaBean.bebida}" />
+				</h:commandButton>
+				<h:commandButton
+					styleClass="btn btn-outline-danger btn-sm"
+					action="#{bebidaBean.excluir(b.codigo)}" 
+					value="Excluir" />
+			</h:form>			
+		</h:column>
+	</h:dataTable>
+	</ui:define>
+</ui:composition>
+</html>

@@ -3,22 +3,51 @@
       xmlns:ui="http://java.sun.com/jsf/facelets" 
       xmlns:h="http://java.sun.com/jsf/html" 
       xmlns:f="http://java.sun.com/jsf/core">
-<h:head>
-	<title>Bebida</title>
-</h:head>
-<h:body>
 
+<ui:composition template="/_template.xhtml">
+	<ui:define name="titulo">Bebidas</ui:define>
+	<ui:define name="conteudo">
+		<h:messages styleClass="text-danger"/>
 	<h:form>
-		<div>
+		<h:inputHidden value="#{bebidaBean.bebida.codigo}" />
+		<div class="form-group">
+			<h:outputText value="Nome" for="nome" />
+			<h:inputText required="true" 
+				requiredMessage="Nome é obrigatório"
+			  	value="#{bebidaBean.bebida.nome}"
+			  	styleClass="form-control"	id="nome">
+			  	<f:validateLength minimum="3" maximum="50"/>
+			 </h:inputText>
+			 <h:message for="nome" styleClass="text-danger"/>
+		</div>
+		<div class="form-group">
+			<h:outputText value="Preço" for="preco" />
+			<h:inputText value="#{bebidaBean.bebida.preco}"
+				styleClass="form-control" id="preco" >
+				<f:validateDoubleRange minimum="0"/>
+			</h:inputText>	
+			<h:message for="preco" styleClass="text-danger"/>
+		</div>
+		<div class="form-group">
+			<h:selectBooleanCheckbox id="al" 
+				value="#{bebidaBean.bebida.alcoolico}" />
+			<h:outputLabel value="Alcoolico" for="al" />	
+		</div>
+		<div class="form-group">
 			<h:outputLabel value="Data" for="data" />
-			<h:inputText id="data"
+			<h:inputText id="data" styleClass="form-control"
 				value="#{bebidaBean.bebida.dataValidade.time}" >
 				<f:convertDateTime pattern="dd/MM/yyyy"/>
 			</h:inputText>
 		</div>
+		<h:commandButton action="#{bebidaBean.salvar()}" 
+						styleClass="btn btn-success" value="Salvar" />
+		
+		<h:link outcome="lista-bebida">Listar Bebidas</h:link>
+						
 	</h:form>
-
-</h:body>   
+	</ui:define>
+</ui:composition>
 </html>
 
 
