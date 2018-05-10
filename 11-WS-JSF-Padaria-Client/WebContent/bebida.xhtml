@@ -7,21 +7,25 @@
 <ui:composition template="/_template.xhtml">
 	<ui:define name="titulo">Bebidas</ui:define>
 	<ui:define name="conteudo">
+	
+	<f:loadBundle basename="br.com.fiap.bundle.padaria" var="b"/>
+	
 		<h:messages styleClass="text-danger"/>
 	<h:form>
 		<h:inputHidden value="#{bebidaBean.bebida.codigo}" />
 		<div class="form-group">
-			<h:outputText value="Nome" for="nome" />
+			<h:outputText value="#{b.lbl_name}" for="nome" />
 			<h:inputText required="true" 
+				validator="#{bebidaBean.validarNome}"
 				requiredMessage="Nome é obrigatório"
 			  	value="#{bebidaBean.bebida.nome}"
-			  	styleClass="form-control"	id="nome">
+			  	styleClass="form-control" id="nome">
 			  	<f:validateLength minimum="3" maximum="50"/>
 			 </h:inputText>
 			 <h:message for="nome" styleClass="text-danger"/>
 		</div>
 		<div class="form-group">
-			<h:outputText value="Preço" for="preco" />
+			<h:outputText value="#{b.lbl_price}" for="preco" />
 			<h:inputText value="#{bebidaBean.bebida.preco}"
 				styleClass="form-control" id="preco" >
 				<f:validateDoubleRange minimum="0"/>
@@ -31,19 +35,19 @@
 		<div class="form-group">
 			<h:selectBooleanCheckbox id="al" 
 				value="#{bebidaBean.bebida.alcoolico}" />
-			<h:outputLabel value="Alcoolico" for="al" />	
+			<h:outputLabel value="#{b.lbl_alcoholic}" for="al" />	
 		</div>
 		<div class="form-group">
-			<h:outputLabel value="Data" for="data" />
+			<h:outputLabel value="#{b.lbl_date}" for="data" />
 			<h:inputText id="data" styleClass="form-control"
 				value="#{bebidaBean.bebida.dataValidade.time}" >
 				<f:convertDateTime pattern="dd/MM/yyyy"/>
 			</h:inputText>
 		</div>
 		<h:commandButton action="#{bebidaBean.salvar()}" 
-						styleClass="btn btn-success" value="Salvar" />
+						styleClass="btn btn-success" value="#{b.btn_save}" />
 		
-		<h:link outcome="lista-bebida">Listar Bebidas</h:link>
+		<h:link outcome="lista-bebida">#{b.btn_list}</h:link>
 						
 	</h:form>
 	</ui:define>
