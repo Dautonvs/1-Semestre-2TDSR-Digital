@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Lista de Veiculos</title>
+</h:head>
+<h:body>
+
+	<h1>Veículos</h1>
+	<h:messages />
+	<h:dataTable value="#{veiculoBean.listar()}" var="v">
+		<h:column>
+			<f:facet name="header">Código</f:facet>
+			#{v.codigo}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Modelo</f:facet>
+			#{v.modelo}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Ano</f:facet>
+			#{v.ano}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Utilitário</f:facet>
+			#{v.utilitario?"Sim":"Não"}
+		</h:column>
+		<h:column>
+			<h:form>
+				<h:commandButton action="veiculo" value="Alterar" >
+					<f:setPropertyActionListener value="#{v}" 
+										target="#{veiculoBean.veiculo}" />
+				</h:commandButton>
+				<h:commandButton action="#{veiculoBean.remover(v.codigo)}"
+										value="Excluir" />
+			</h:form>
+		</h:column>
+	</h:dataTable>
+
+</h:body>
+</html>

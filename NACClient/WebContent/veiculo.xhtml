@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets" 
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Veículo</title>
+</h:head>
+<h:body>
+
+	<h1>Veículo</h1>
+	<h:messages />
+	<h:form>
+		<h:inputHidden value="#{veiculoBean.veiculo.codigo}" />
+		<div>
+			<h:outputLabel value="Modelo" for="modelo" />
+			<h:inputText value="#{veiculoBean.veiculo.modelo}" id="modelo" />
+		</div>
+		<div>
+			<h:outputLabel value="Ano" for="ano" />
+			<h:inputText value="#{veiculoBean.veiculo.ano}" id="ano" />
+		</div>
+		<div>
+			<h:selectBooleanCheckbox id="ut" value="#{veiculoBean.veiculo.utilitario}" />
+			<h:outputLabel value="Utilitário" for="ut" />
+		</div>
+		<h:commandButton action="#{veiculoBean.cadastrar()}" value="Cadastrar" />
+	</h:form>
+	
+
+</h:body>   
+</html>

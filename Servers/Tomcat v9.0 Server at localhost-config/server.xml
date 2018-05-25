@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="09-WS-Restful-Padaria-Server" path="/09-WS-Restful-Padaria-Server" reloadable="true" source="org.eclipse.jst.jee.server:09-WS-Restful-Padaria-Server"/><Context docBase="11-WS-JSF-Padaria-Client" path="/11-WS-JSF-Padaria-Client" reloadable="true" source="org.eclipse.jst.jee.server:11-WS-JSF-Padaria-Client"/></Host>
+      <Context docBase="09-WS-Restful-Padaria-Server" path="/09-WS-Restful-Padaria-Server" reloadable="true" source="org.eclipse.jst.jee.server:09-WS-Restful-Padaria-Server"/><Context docBase="11-WS-JSF-Padaria-Client" path="/11-WS-JSF-Padaria-Client" reloadable="true" source="org.eclipse.jst.jee.server:11-WS-JSF-Padaria-Client"/><Context docBase="NACServer" path="/NACServer" reloadable="true" source="org.eclipse.jst.jee.server:NACServer"/><Context docBase="NACClient" path="/NACClient" reloadable="true" source="org.eclipse.jst.jee.server:NACClient"/></Host>
     </Engine>
   </Service>
 </Server>
